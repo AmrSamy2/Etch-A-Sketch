@@ -1,0 +1,38 @@
+
+
+
+
+body {
+  height: 100vh ;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+#container {
+display: grid;
+/* grid-template-columns: repeat(16, 1fr); */
+gap: 1px;
+width: 960px;
+max-width: 960px;
+border: 1px;
+border-style: solid;
+
+
+
+}
+
+.grid-item {
+  padding: 16px 16px;
+  border: 1px;
+  border-style: solid;
+  box-sizing: border-box;
+}
+
+.mouseover {
+  background-color: grey;
+  transition: 0.5s;
+}
