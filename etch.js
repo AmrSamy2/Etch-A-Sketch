@@ -1,23 +1,83 @@
-const container = document.querySelector("#container");
-container.style.gridTemplateColumns = 'repeat(16, 1fr)'
-container.style.gridTemplateRows = 'repeat(16, 1fr)'
+const btnBlack = document.querySelector('.btn-black')
+const btnErase = document.querySelector('.btn-erase')
+const btnGrey = document.querySelector('.btn-grey')
+const btnReset = document.querySelector('.btn-reset')
+// const btnRandom = document.querySelector('.btn-random')
+
+// function randomColor (){
+//   if (cell.className = )
+//   let letters = '0123456789ABCDEF';
+//   let color = '#';
+//   for (let i = 0; i < 6; i++) {
+//     color += letters[Math.floor(Math.random() * 16)];
+//   }
+//   return color;
+// }
+
+function makeRows(size) {
+
+  const container = document.querySelector("#container");
+  // const input = document.querySelector('input')
+  const cells = container.querySelectorAll('div')
+  cells.forEach((div) => div.remove())
 
 
 
+  container.style.gridTemplateColumns = `repeat(${size}, 1fr)`
+  container.style.gridTemplateRows = `repeat(${size}, 1fr)`
 
-function makeRows(rows, cols) {
-  for (c = 0; c < (rows * cols); c++) {
+  for (c = 0; c < size * size; c++) {
     let cell = document.createElement("div");
     container.appendChild(cell).className = "grid-item";
+
+    // btnRandom.addEventListener ('click', function (){
+    //   cell.addEventListener ('mouseover', function (){
+    //     cell.className = ('')
+    //     cell.style.backgroundColor = randomColor()
+    //   })
+    // })
+
+    btnErase.addEventListener('click', function erase() {
+      cell.addEventListener('mouseover', function () {
+        cell.className = ('')
+        cell.classList.add('erase')
+      })
+    })
+    btnReset.addEventListener('click', function () {
+      cell.className = ('')
+    })
+    btnGrey.addEventListener('click', function () {
+      cell.addEventListener('mouseover', mouseover)
+
+    })
+
     function mouseover() {
-      cell.classList.add('mouseover')
-       }
+      cell.classList.add(`grey`)
+    }
     cell.addEventListener('mouseover', mouseover)
 
-   
+    btnBlack.addEventListener('click', function black() {
+      cell.addEventListener('mouseover', function () {
+        cell.className = ('')
+        cell.classList.add('black')
+      })
+    })
+
+
   };
-};
-makeRows(20, 20);
+}
+makeRows(16);
+
+function changeSize(input) {
+  if (input < 2 || input > 100) {
+    alert("size  between 2 and 100")
+  } else (makeRows(input))
+}
+
+
+// function changeColor(colors) {
+//   cellColor(colors)
+// }
 
 
 
