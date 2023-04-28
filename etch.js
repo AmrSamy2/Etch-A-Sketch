@@ -33,9 +33,21 @@ function makeRows(size) {
     // btnRandom.addEventListener ('click', function (){
     //   cell.addEventListener ('mouseover', function (){
     //     cell.className = ('')
-    //     cell.style.backgroundColor = randomColor()
+    //     cell.classList('').style.backgroundColor = randomColor()
     //   })
     // })
+    function mouseover() {
+      cell.className = ('')
+      cell.classList.add('grey')
+    }
+    btnGrey.addEventListener('click', function () {
+      cell.addEventListener('mouseover', function (){
+        cell.className = ('')
+        cell.classList.add('grey')
+      })
+
+    })
+
 
     btnErase.addEventListener('click', function erase() {
       cell.addEventListener('mouseover', function () {
@@ -46,14 +58,8 @@ function makeRows(size) {
     btnReset.addEventListener('click', function () {
       cell.className = ('')
     })
-    btnGrey.addEventListener('click', function () {
-      cell.addEventListener('mouseover', mouseover)
 
-    })
-
-    function mouseover() {
-      cell.classList.add(`grey`)
-    }
+   
     cell.addEventListener('mouseover', mouseover)
 
     btnBlack.addEventListener('click', function black() {
